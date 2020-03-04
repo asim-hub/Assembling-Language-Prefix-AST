@@ -1,0 +1,28 @@
+ASIMIONESEI DANIEL 321CD
+
+	In implementarea temei am plecat de la scheletul oferit de echipa
+si in prima etapa a codului am parcurs arborele nereursiv dupa regula SDR(Postorder)
+si am adaugat indormatia din noduri intr-un vector.Pentru parcurgerea
+arborelui m-am folosit de stiva unde puneam adresa nodului-radacina al
+subarborelui stang in care urma sa ma duc , pentru ca mai tarziu sa ma intorc 
+inapoi in el si sa investighez subarborele drept respectiv nodul-radacina.Astfel,in
+stiva erau puse doar adresele operanzilor,pentru ca in frunze erau doar
+operatori, iar cand ajungeam la un operator il adaugam direct in vector,scoteam 
+radacina din stiva si ma duceam in copilul drept iar daca copilul drept era tot operand 
+il adaugam si pe el in stiva alaturi de radacina .
+Dupa ce mi-am format vectorul de adrese de stringui, am facut un alt vector
+in care am convertit stringurile in int-uri.Dupa ce am obtinut noul vector 
+am iterat prin el si m-am oprit la primul operator,daca acesta exista,
+si am verificat daca cele doua elemente din fata operatorului din vector sunt operanzi
+,iar daca erau aplicam operatia pe cele doua elemente si inlocuiam primul 
+element cu rezultatul,iar pe al doilea element si pe operatie le stergeam
+din vector si scadeam dimensiunea lui cu 2.Daca cele doua elemente anterioare 
+operatotului nu erau operanzi , continuam cautarea in vector a altui operator care 
+era precedat consecutiv de doi operanzi.Am repetat acest lucru pana cand dimensiunea
+vectorului a devenit 1,iar singurul element ramas este chiar rezultatul final.
+	In cod am folosit jump-uri pentru a trata toate situatiile posibile si a 
+putea realiza parcurgerea,m-am folosit de registre precum(eax,ebx,ecx,edx,esi,edi)
+petru a stoca informatia,pe care am aplicat operatii.Stiva a fost folosita doar
+pentru a sti sa ma intorc in nodurile parinte.
+   
+
